@@ -19,29 +19,24 @@ To implement univariate Linear Regression to fit a straight line using least squ
 #Developed by: AJITH KUMAR A
 #register number: 23002150
 
-import numpy as np 
-import matplotlib.pyplot as plt
-x = np.array([0,1,2,3,4,5,6,7,8,9])
-y = np.array([1,3,2,5,7,8,8,9,10,12])
-plt.scatter(x,y)
-plt.show()
-xmean = np.mean(x)
-ymean = np.mean(y)
-num=0
-den=0
-for i in range(len(x)):
-    num+=(x[i]-xmean)*(y[i]-ymean)
-    den+=(x[i]-xmean)**2
-m = num/den
-b = ymean - m*xmean
+import numpy as np
+import matplotlib.pyplot as py
+x=np.array(eval(input()))
+y=np.array(eval(input()))
+x_mean=np.mean(x)
+y_mean=np.mean(y)
+num,denom=0,0
+for i in range (len(x)):
+    num+=(x[i]-x_mean)*(y[i]-y_mean)
+    denom+=(x[i]-x_mean)**2
+m=num/denom
+b=y_mean-(m*x_mean)
 print(m,b)
-ypred = m*x+b
-print(ypred)
-
-
-plt.scatter(x,y,color='Red')
-plt.plot(x,ypred,color='Blue')
-plt.show()
+y_pred=(m*x)+b
+print(y_pred)
+py.scatter(x,y,color='pink')
+py.plot(x,y_pred,color='blue')
+py.show()
 ```
 ## Output
 ![image](https://github.com/Ajith1413/Univariate-Linear-Regression/assets/139842524/572414a9-8010-4e12-bd71-b6736951a4f2)
